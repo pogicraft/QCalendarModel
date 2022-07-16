@@ -60,3 +60,9 @@ class CalendarModel(QAbstractItemModel):
 		month = index.column()
 		day = index.row()
 		self.array[month][day][role] = value
+	
+	def days_inMonth(self, month):
+		if month <= len(self.array):
+			return len(self.array[month-1])
+		else:
+			return False
