@@ -49,3 +49,14 @@ class CalendarModel(QAbstractItemModel):
 	
 	def columnCount(self, parent):
 		return 12
+	
+	def get_finger(self):
+		return self.finger
+	
+	def get_fingerDate(self):
+		return self.finger.getDate()
+	
+	def setData(self, index, value, role):
+		month = index.column()
+		day = index.row()
+		self.array[month][day][role] = value
