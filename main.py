@@ -43,3 +43,9 @@ class CalendarModel(QAbstractItemModel):
 			return self.array[month][day][role]
 		else:
 			return False
+		
+	def rowCount(self, parent):
+		return 31
+	
+	def columnCount(self, parent):
+		return 12
